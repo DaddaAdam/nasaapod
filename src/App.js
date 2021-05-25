@@ -6,11 +6,11 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={"https://daddaadam.github.io/nasaapod/"}>
+    <BrowserRouter>
       <div>
-        <Route component={Home} path="/" exact />
-        <Route component={NasaPhoto} path="/nasaphotocomponent" />
-        <Route component={Favorites} path="/favorites" />
+        <Route component={Home} path="/nasaapod" exact />
+        <Route component={NasaPhoto} path="/nasaapod/nasaphotocomponent" />
+        <Route component={Favorites} path="/nasaapod/favorites" />
       </div>
     </BrowserRouter>
   );

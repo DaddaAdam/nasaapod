@@ -155,7 +155,7 @@ export default function Favorites(props) {
                   color="primary"
                   aria-label="text primary button group"
                 >
-                  <Button component={Link} to="/">
+                  <Button component={Link} to="/nasaapod">
                     <Typography variant="h5">HomePage</Typography>
                   </Button>
                   <Button>

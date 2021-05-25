@@ -150,7 +150,7 @@ export default function Home(props) {
                 <Button component={Link}>
                   <Typography variant="h5">HomePage</Typography>
                 </Button>
-                <Button component={Link} to="/favorites">
+                <Button component={Link} to="/nasaapod/favorites">
                   <Typography variant="h5">Favorites</Typography>
                 </Button>
               </ButtonGroup>
