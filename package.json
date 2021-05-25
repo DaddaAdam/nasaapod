@@ -1,6 +1,6 @@
 {
   "name": "nasa-apod",
-  "homepage": "https://daddaadam.github.io/",
+  "homepage": "https://daddaadam.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
