@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={"https://daddaadam.github.io/nasaapod/"}>
       <div>
         <Route component={Home} path="/" exact />
         <Route component={NasaPhoto} path="/nasaphotocomponent" />
