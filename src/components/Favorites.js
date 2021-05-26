@@ -101,6 +101,30 @@ const defaultProps = {
   border: 1,
 };
 
+const removeFromFavorites = (photoDataParameter) => {
+  let favoritesArray = [];
+
+  /* 
+    On utilise JSON.parse par ce que la clé est stockée sous forme de string
+  et on a besoin de la convertir on objet JSON 
+  */
+  let previousData = JSON.parse(localStorage.getItem("favorites"));
+
+  /*
+    Si previousData est différent de null, c'est qu'on a des objets en favoris
+  On les rajoute donc à la liste 
+  */
+  if (previousData) favoritesArray = previousData;
+
+  function alreadyExists(arrayElement) {
+    return arrayElement.url === photoDataParameter.url;
+  }
+
+  favoritesArray.splice(favoritesArray.findIndex(alreadyExists), 1);
+
+  localStorage.setItem("favorites", JSON.stringify(favoritesArray));
+};
+
 export default function Favorites(props) {
   const [isFavorite, setIsFavorite] = useState(true);
   const classes = useStyles();
@@ -206,12 +230,13 @@ export default function Favorites(props) {
                               size="medium"
                               className={classes.favIcon}
                               onClick={() => {
-                                if (isFavorite === false) {
-                                  setIsFavorite(!isFavorite);
+                                if (isFavorite) {
+                                  removeFromFavorites(photoData);
+                                  setIsFavorite(!isFavorite); //Pour forcer à re-render la page
                                 }
                               }}
                             >
-                              {isFavorite ? (
+                              {photoData.isFavorite ? (
                                 <StarIcon />
                               ) : (
                                 <StarBorderOutlinedIcon />
